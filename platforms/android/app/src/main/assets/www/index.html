@@ -1,0 +1,286 @@
+<!--
+File name : index.html
+Program : PROG2430 Final Project
+Name : Toys sharing App
+Revision History :
+    Abdel Olayyan & Yunice Kim, Apr 14, 2020 : Created
+    Apr 15, 2020 : Converted to Cordova App
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Toys Sharing</title>
+    <!--JQuery -->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--JQuery Mobile -->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <!--JQuery Mobile css-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+
+    <!--    jQuery validator-->
+    <script src="js/lib/jquery.validate.js"></script>
+
+    <!--our stuff-->
+    <link rel="stylesheet" href="css/mystyle.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/ToysSharingDAL.js"></script>
+    <script src="js/facade.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/camera.js"></script>
+</head>
+<body>
+    <!--        This is the first page : ListHome -->
+    <div id="pageList" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1> Toys List </h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-active ui-state-persist">Toys List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-a">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-a">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-a">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-a">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <header>
+                <h1>Welcome to Toys Sharing App</h1>
+            </header>
+            <section>
+                <p>Everybody can share their toys easily.</p>
+                    <ul id="lvAvailableToys" data-role="listview" data-inset="true" data-split-icon="gear">
+
+                    </ul>
+            </section>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 <span id="authors">  Abdel Olayyan & Yunice Kim</span></h1>
+        </footer>
+    </div>
+
+    <!--        This is the detail page of a toy in the list page -->
+    <div id="pageToyDetail" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1>Rent a Toy</h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-active ui-state-persist">List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-a">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-a">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-a">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-a">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <form action="#" id="detailForm" name="detailForm">
+                <label for="nameInList">Toy Name: </label><input type="text" name="nameInList" id="nameInList" readonly>
+                <label for="descriptionInLIst">Description: </label><textarea name="descriptionInLIst" id="descriptionInLIst" readonly></textarea>
+                <label for="cmbConditionInList">Condition</label>
+                <select name="cmbConditionInList" id="cmbConditionInList" data-native-menu="true" disabled>
+                    <option value="Good" selected>Good</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Poor">Poor</option>
+                </select>
+                <label for="picturesInList">Picture </label><span id="picturesInList"></span>
+                <label for="rentDate">Rent Date: </label>
+                <input type="date" id="rentDate" name="rentDate">
+                <label for="returnDate">Return Date: </label>
+                <input type="date" id="returnDate" name="returnDate">
+
+                <div data-role="controlgroup" data-type="horizontal">
+                    <button type="button" data-role="button" data-theme="b" id="btnCancelInList" name="btnCancelInList">Cancel</button>
+                    <button type="button" data-role="button" class="ui-btn-active" id="btnRentInList" name="btnRentInList">Rent</button>
+                </div>
+            </form>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 <span id="authors">  Abdel Olayyan & Yunice Kim</span></h1>
+        </footer>
+    </div>
+
+    <!--This is the second page : RegisterToyPage-->
+    <div id="pageRegister" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1>Register a Toy</h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-a">List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-active ui-state-persist">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-a">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-a">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-a">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <form action="#" id="RegisterForm">
+                <label for="name">Toy Name: </label><input type="text" name="name" id="name">
+                <label for="description">Description: </label><textarea name="description" id="description"></textarea>
+                <label for="cmbCondition">Condition</label>
+                <select name="cmbCondition" id="cmbCondition" data-native-menu="true">
+                    <option value="Good" selected>Good</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Poor">Poor</option>
+                </select>
+                <label for="imgRegister">Picture </label><img id="imgRegister" src="" width="200px" alt="">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <button type="button" data-role="button" style="background-color: yellow;" id="btnCapturePhoto" name="btnCapturePhoto">Take Photo</button>
+                </div>
+
+                <div data-role="controlgroup" data-type="horizontal">
+                    <button type="button" data-role="button" class="ui-btn-active" id="btnSave" name="btnSave">Save</button>
+                </div>
+            </form>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 <span id="authors">  Abdel Olayyan & Yunice Kim</span></h1>
+        </footer>
+    </div>
+
+    <!--        This is the Third page : RentPage-->
+    <div id="pageRent" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1>Rent List</h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-a">List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-a">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-active ui-state-persist">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-a">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-a">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <ul id="lvRentingAll" data-role="listview" data-inset="true" data-split-icon="gear">
+
+            </ul>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 <span id="authors">Abdel Olayyan & Yunice Kim</span></h1>
+        </footer>
+    </div>
+
+    <!--This is the detail page of a toy in the Rent page -->
+    <div id="pageRentDetail" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1>Rent a Toy</h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-a">List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-a">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-active ui-state-persist">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-a">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-a">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <form action="#" id="detailRentForm" name="detailRentForm">
+                <label for="nameInRentDetail">Toy Name: </label><input type="text" name="nameInRentDetail" id="nameInRentDetail" readonly>
+                <label for="descriptionInRentDetail">Description: </label><textarea name="descriptionInRentDetail" id="descriptionInRentDetail" readonly></textarea>
+                <label for="cmbConditionInRentDetail">Condition</label>
+                <select name="cmbConditionInRentDetail" id="cmbConditionInRentDetail" data-native-menu="true" disabled>
+                    <option value="Good" selected>Good</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Poor">Poor</option>
+                </select>
+                <label for="pictureInRentDetail">Pictures: </label><span id="pictureInRentDetail"></span>
+                <label for="rentDateInRentDetail">Rent Date: </label>
+                <input type="text" id="rentDateInRentDetail" name="rentDateInRentDetail" readonly>
+                <label for="returnDateInRentDetail">Return Date: </label>
+                <input type="text" id="returnDateInRentDetail" name="returnDateInRentDetail" readonly>
+
+                <div data-role="controlgroup" data-type="horizontal">
+                    <button type="button" data-role="button" data-theme="b" id="btnCancelInRentDetail" name="btnCancelInRentDetail">Cancel</button>
+                    <button type="button" data-role="button" id="btnReturn" name="btnReturn" class="ui-btn-active" >Return</button>
+
+                </div>
+            </form>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 Abdel  Olayyan </h1>
+        </footer>
+    </div>
+
+    <!--        This is the Fourth page : HistoryPage-->
+    <div id="pageHistory" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1>History of Renting</h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-a">List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-a">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-a">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-active ui-state-persist">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-a">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <ul id="lvHistoryAll" data-role="listview" data-inset="true" data-icon="false">
+
+            </ul>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 <span id="authors">  Abdel Olayyan & Yunice Kim</span></h1>
+        </footer>
+    </div>
+
+    <!--        This is the Fourth page : AboutPage-->
+    <div id="pageAbout" data-role="page">
+        <header data-role="header" data-theme="b" data-position="fixed">
+            <h1>About & Join</h1>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#pageList" data-icon="home" class="ui-btn-a">List</a></li>
+                    <li><a href="#pageRegister" data-icon="plus" class="ui-btn-a">Register</a></li>
+                    <li><a href="#pageRent" data-icon="grid" class="ui-btn-a">Rent</a></li>
+                    <li><a href="#pageHistory" data-icon="star" class="ui-btn-a">History</a></li>
+                    <li><a href="#pageAbout" data-icon="gear" class="ui-btn-active ui-state-persist">About</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content" class="content">
+            <div align="center"><h1><b>Author 1 : Abdel Olayyan<br>Author 2 : Yunice Kim</b></h1>
+                <h3>Computer Programming/Analysis <br>Level 4 section 3</h3>
+            </div>
+            <div>&nbsp<br/></div>
+            <form action="#" name="SettingForm">
+                <label for="changeRenter">login email:</label>
+                <input type="text" id="changeRenter" name="changeRenter">
+                <button type="button" data-role="button" class="ui-btn-active" id="btnChangeRenter" name="btnChangeRenter">Change Login Email</button>
+                <button type="button" data-role="button" data-theme="b" id="btnClearDatabase" name="btnClearDatabase">Clear Database</button>
+            </form><br>
+            <h1>Join Sharing Toys App</h1>
+            <form action="#" id="JoinForm">
+                <label for="emailForJoin">Email: </label><input type="text" name="emailForJoin" id="emailForJoin">
+                <label for="nameForJoin">Name: </label><input type="text" name="nameForJoin" id="nameForJoin">
+                <label for="addressForJoin">Address: </label><input type="text" name="addressForJoin" id="addressForJoin">
+                <label for="cityForJoin">City: </label><input type="text" name="cityForJoin" id="cityForJoin">
+                <label for="cmbProvinceForJoin">Province</label>
+                <select name="cmbProvinceForJoin" id="cmbProvinceForJoin" data-native-menu="true">
+                    <option value="ON" selected>ON</option>
+                    <option value="AB">AB</option>
+                    <option value="QC">QC</option>
+                </select>
+                <label for="postalCodeForJoin">Postal Code: </label><input type="text" name="postalCodeForJoin" id="postalCodeForJoin">
+                <label for="phoneForJoin">Phone: </label><input type="text" name="phoneForJoin" id="phoneForJoin">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <button type="button" data-role="button" class="ui-btn-active" id="btnJoin" name="btnJoin">Join</button>
+                    <!--<button type="button" data-role="button" class="a" id="btnDelete" name="btnDelete">Delete</button>-->
+                    <button type="button" data-role="button" class="a" id="btnFill" name="btnFill">Fill</button>
+                </div>
+            </form>
+        </section>
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h1>@ 2020 <span id="authors">  Abdel Olayyan & Yunice Kim</span></h1>
+        </footer>
+    </div>
+</body>
+</html>

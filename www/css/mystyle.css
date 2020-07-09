@@ -1,0 +1,18 @@
+body{
+    max-width: 940px;
+    margin: auto;
+}
+
+label.error{
+    color: #F00;
+    font-weight: bold;
+}
+
+input.error,
+select.error,
+textarea.error{
+    border: 1px red solid;
+}
+#authors{
+    color: dodgerblue;
+}

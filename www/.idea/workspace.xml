@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b0a5edd5-6252-4ca2-a1fe-3165eb4433fa" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XlEvOpN1zRCvB0tKZcGjN202v8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Inclass" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yunic\Documents\Study\Level 4\PROG2430-3 Mobile\Assign\Assign3\YKFeedbackA3\js" />
+      <recent name="C:\Users\yunic\Documents\Study\Level 4\PROG2430-3 Mobile\Assign\Assign2\YKFeedbackA2\js" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0a5edd5-6252-4ca2-a1fe-3165eb4433fa" name="Default Changelist" comment="" />
+      <created>1581612510893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581612510893</updated>
+      <workItem from="1581612512030" duration="6667000" />
+      <workItem from="1582212932171" duration="3768000" />
+      <workItem from="1582408643488" duration="17004000" />
+      <workItem from="1584018848827" duration="1326000" />
+      <workItem from="1585232103509" duration="1435000" />
+      <workItem from="1586047691664" duration="31819000" />
+      <workItem from="1586214528011" duration="779000" />
+      <workItem from="1586375168098" duration="3702000" />
+      <workItem from="1586440109085" duration="5639000" />
+      <workItem from="1586644806445" duration="606000" />
+      <workItem from="1586895437033" duration="33859000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../../../Inclass/HelloTS/Hello.js" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="95" key="#Inspections" timestamp="1586132322843">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="95" key="#Inspections/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1586132322843" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1586959194027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1586959194026" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584022065567" />
+    <state x="630" y="92" key="SettingsEditor" timestamp="1586106292440">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="630" y="92" key="SettingsEditor/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1586106292440" />
+    <state x="591" y="335" width="865" height="368" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1586106162289">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="591" y="335" width="865" height="368" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1586106162289" />
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1586113557680">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1586113557680" />
+  </component>
+</project>
